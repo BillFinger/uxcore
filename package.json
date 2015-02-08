@@ -1,0 +1,19 @@
+{
+  "author": "Steffen Wolf",
+  "license": "MIT",
+  "name": "STWA4-SAPPM",
+  "version": "0.0.2",
+  "description": "SAPPM-Bootstrap-Generic-Framework",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "devDependencies": {
+
+  },
+  "dependencies": {
+
+
+
+  }
+}
