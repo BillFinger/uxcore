@@ -20,8 +20,8 @@ function apis_db ( res, server, port, path, user, pass){
 
   require('https').get (
 
-    //'https://admin:@t9L2iKOP63' + server + ':' + port + '/' + path, //URL
-    'https://admin:jXCThnQQde@couchdb119319-ih9nc.jelastic.dogado.eu/ih9-dev/cfg',
+    //'https://admin:@' + server + ':' + port + '/' + path, //URL
+    'https://admin:@couchdb9-ih.jelastic.dogado.eu/ihev/cfg',
     function ( cdbres ){  cdbres.pipe(res);}      //CALLBACK
 
   )
@@ -50,13 +50,10 @@ function router(req, res){
   //ROUTING
   switch (true){
 
-//    case /cdb\/ihm/.test( req.url ): console.log('cdb ihm fire\t' + req.url); api_db( res, 'vwagwoya1074.wob.vw.vwg', 5984,'ih9/IH-Meldung');       break;
-//    case /cdb\/cfg/.test( req.url ): console.log('cdb cfg fire\t' + req.url); api_db( res, 'vwagwoya1074.wob.vw.vwg', 5984,'ih9/CFG-Liste' );       break;
-//    case /mdb\/cfg/.test( req.url ): console.log('mdb cfg fire\t' + req.url); api_db( res, 'vwagwoya1074.wob.vw.vwg', 28017,'pm/cfg/' );            break;
 
-    case /cdb\/cld/.test( req.url ): console.log('cdb cld fire\t' + req.url); apis_db( res, 'couchdb116715-myih9.jelastic.dogado.eu', '','myih9/ihm/','admin','t9L2iKOP63');       break;
-    case /cdb\/ihm/.test( req.url ): console.log('cdb ihm fire\t' + req.url);  api_db( res, 'localhost', 5984,'ih9/IH-Meldung');       break;
-    case /cdb\/cfg/.test( req.url ): console.log('cdb cfg fire\t' + req.url);  api_db( res, 'localhost', 5984,'ih9/CFG-Liste' );       break;
+    case /cdb\/cld/.test( req.url ): console.log('cdb cld fire\t' + req.url); apis_db( res, 'couchdb1167astic.dogado.eu', '','myiihm/','admin','t9L2iKOP63');       break;
+    case /cdb\/ihm/.test( req.url ): console.log('cdb ihm fire\t' + req.url);  api_db( res, 'localhost', 5984,'ih/IH-Meldung');       break;
+    case /cdb\/cfg/.test( req.url ): console.log('cdb cfg fire\t' + req.url);  api_db( res, 'localhost', 5984,'ih/FG-Liste' );       break;
     case /mdb\/cfg/.test( req.url ): console.log('mdb cfg fire\t' + req.url);  api_db( res, 'localhost', 28017,'pm/cfg/' );            break;
 
     case /\/.*/.test( req.url ):     console.log('cdb fs req\t'+ __dirname + ' ' + req.url); file_db(req,res); break;
@@ -87,8 +84,8 @@ var
     datastore={ hash:0, nextid:1,log:[], storage:[] },
 	f = require('fs'),conf = require('./config.json'),localcache=require('./storage.json'),//exp=require('express'),sio=require('socket.io'),
 //	o = {
-//			key:	f.readFileSync('./selfsignedsteffenkey.pem'),
-//			cert:	f.readFileSync('./selfsignedsteffencsr.pem')
+//			key:	f.readFileSync('./selfsignedsteey.pem'),
+//			cert:	f.readFileSync('./selfsignedstesr.pem')
 //		},
 	//---------------------
 	esockets = [],csockets = [],wsockets = [],
@@ -213,11 +210,3 @@ function hashCode(s){return s.split('').reduce(function(a,b){a=((a<<5)-a)+b.char
 require('http').createServer( router )
 //require('https').createServer( o, router )
 .listen( port, function(){console.log(__dirname + ' Waining for connection on port ' +port + '...'+conf.port+'###'+localcache.nextid+'###'+localcache.hash+'###'+localcache.storage.length);});
-//curl https://couchdb116715-myih9.jelastic.dogado.eu/myih9/ihm -u admin:t9L2iKOP63
-//http://youtu.be/gBxStuyGE4E
-//http://youtu.be/UeMEnfo_WKY
-//https://www.youtube.com/watch?v=gBxStuyGE4E
-//http://yeoman.io/
-//http://mean.io/#!/
-//https://github.com/DaftMonk/generator-angular-fullstack
-//https://www.npmjs.com/package/generator-mean
